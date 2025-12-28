@@ -7,11 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Go to project folder
-      run: cd health
+    - uses: actions/checkout@v3
     
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -20,11 +16,11 @@ jobs:
     
     - name: Install dependencies
       working-directory: ./health
-      run: npm install
+      run: npm ci
     
     - name: Run linter
       working-directory: ./health
-      run: npm run lint
+      run: npx eslint src __tests__
     
     - name: Run tests
       working-directory: ./health
