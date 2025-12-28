@@ -20,7 +20,7 @@ jobs:
     
     - name: Run linter
       working-directory: ./health
-      run: npx eslint src __tests__
+      run: npx eslint src tests
     
     - name: Run tests
       working-directory: ./health
